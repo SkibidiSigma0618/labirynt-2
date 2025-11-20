@@ -38,7 +38,7 @@ public class Generator : MonoBehaviour {
 		wallHolder = null;
 		tempWall = null;
 		cells = null;
-		GameObject.Find("")
+		Destroy(GameObject.Find("Generator"));
     }
 
 	/// <summary>
