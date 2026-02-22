@@ -35,7 +35,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: drunk run right
+  m_Name: pistol run right
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -51,7 +51,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 702b3d43a8ec4e24c96b09a81fa84a0f, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: fa36ce68c0807bd4eb353f1f590e305c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -203,7 +203,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: drunk run backward
+  m_Name: pistol backward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -217,7 +217,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 3e51cb58eea834041a04afc171ab0df0, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: a37347964be3cb94c9a61efd319350ff, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -230,7 +230,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: drunk run forward
+  m_Name: pistol run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -246,7 +246,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 704bbc5af9b49a34d825a5a0a3754d12, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 72da58389c6bd614f81a1c3cfa05a852, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -387,7 +387,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6372229374906834377}
-    m_Position: {x: 210, y: 80, z: 0}
+    m_Position: {x: 460, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1578803536440907341}
     m_Position: {x: 790, y: 90, z: 0}
@@ -399,7 +399,7 @@ AnimatorStateMachine:
     m_Position: {x: 520, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1875206191521138652}
-    m_Position: {x: 530, y: 150, z: 0}
+    m_Position: {x: 100, y: 80, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -548,7 +548,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: drunk run left
+  m_Name: pistol run left
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -564,7 +564,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 702b3d43a8ec4e24c96b09a81fa84a0f, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: fa36ce68c0807bd4eb353f1f590e305c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
