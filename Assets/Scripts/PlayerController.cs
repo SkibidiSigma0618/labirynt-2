@@ -1,3 +1,4 @@
+using System;
 using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,21 +7,27 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     InputAction movement;
+    InputAction crouch;
     public float speed;
     private Vector2 inputValue;
 
-    private Transform cam;
     public Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         movement = InputSystem.actions.FindAction("Move");
-        cam = Camera.main.transform;
+
+    
+
+        movement.Enable();
+        crouch.Enable();
     }
 
 
 
+
     // Update is called once per frame
+
     void Update()
     {
         inputValue = movement.ReadValue<Vector2>();
@@ -33,4 +40,5 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(forward);
         transform.Translate(move * speed * Time.deltaTime);
     }
+
 }

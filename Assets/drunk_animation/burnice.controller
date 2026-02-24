@@ -89,7 +89,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: drunk idle
+  m_Name: pistol idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -106,7 +106,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 73fbace3a9937f84b9be143ce8f925fa, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 3a540d7f9ab2c944faf4947985cc83c6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -335,6 +335,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isCrouch
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -390,24 +396,24 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1578803536440907341}
-    m_Position: {x: 790, y: 90, z: 0}
+    m_Position: {x: 700, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7625423348805582474}
-    m_Position: {x: 570, y: -280, z: 0}
+    m_Position: {x: 460, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8754137420244960244}
-    m_Position: {x: 520, y: 380, z: 0}
+    m_Position: {x: 460, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1875206191521138652}
-    m_Position: {x: 100, y: 80, z: 0}
+    m_Position: {x: 220, y: 70, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 90, y: -170, z: 0}
-  m_EntryPosition: {x: -110, y: 90, z: 0}
-  m_ExitPosition: {x: 280, y: -110, z: 0}
+  m_AnyStatePosition: {x: 60, y: -210, z: 0}
+  m_EntryPosition: {x: 0, y: 60, z: 0}
+  m_ExitPosition: {x: 60, y: -80, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -6372229374906834377}
 --- !u!1101 &1200101485174248620
