@@ -1,26 +1,34 @@
 using System;
-using System.Data.Common;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     InputAction movement;
-    InputAction crouch;
+    InputAction jump;
     public float speed;
+    public float rotationSpeed = 15f;
+    public float jumpHeight = 2f;
+    public float groundDistance = 0.2f;
+    public LayerMask groundMask;
+    private bool isGrounded;
+    
     private Vector2 inputValue;
 
     public Animator anim;
+    private Rigidbody rb;
+    private Transform camTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         movement = InputSystem.actions.FindAction("Move");
-
-    
+        jump = InputSystem.actions.FindAction("Jump");
+        rb = GetComponent<Rigidbody>();
+        camTransform = Camera.main.transform;
 
         movement.Enable();
-        crouch.Enable();
+        rb.interpolation = RigidbodyInterpolation.Interpolate; 
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
 
@@ -30,15 +38,38 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask);
         inputValue = movement.ReadValue<Vector2>();
         anim.SetFloat("Speed", inputValue.magnitude);
         anim.SetFloat("MoveX", inputValue.x);
         anim.SetFloat("MoveY", inputValue.y);
-        Vector3 move = new Vector3(inputValue.x, 0, inputValue.y);
-        Vector3 forward = Camera.main.transform.forward;
-        forward.y = 0f;
-        transform.rotation = Quaternion.LookRotation(forward);
-        transform.Translate(move * speed * Time.deltaTime);
+
+        if (jump.WasPressedThisFrame() && isGrounded)
+        {
+            Jump();
+        }
     }
 
+    void FixedUpdate()
+    {
+        Vector3 forward = camTransform.forward;
+        forward.y = 0f;
+
+        if (forward.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        Vector3 moveDir = transform.right * inputValue.x + transform.forward * inputValue.y;
+        Vector3 targetVelocity = moveDir * speed;
+        rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
+    }
+    
+    void Jump()
+    {
+        float jumpVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
+        rb.AddForce(Vector3.up * jumpVelocity, ForceMode.VelocityChange);
+        anim.SetTrigger("jump");
+    }
 }

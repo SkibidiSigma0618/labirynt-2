@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
         if (bulletPrefab != null && firePoint != null)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation, null);
-            Destroy(bullet, 0.5f);
+            Destroy(bullet, 1f);
         }
     }
 }

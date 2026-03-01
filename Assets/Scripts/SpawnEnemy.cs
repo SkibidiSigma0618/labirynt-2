@@ -16,7 +16,18 @@ public class SpawnEnemy : MonoBehaviour
         Vector3 spawn = GetRandomPoint(new Vector3(50, 0, 50), 30.0f);
         GameObject enemy = Instantiate(enemyPrefab, spawn, enemyPrefab.transform.rotation, null);
         Death death = enemy.GetComponent<Death>();
-        death.death = deathScreen;
+        death.deathScreen = deathScreen;
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CancelInvoke("Spawn");
+            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                Destroy(enemy);
+            }
+        }
     }
 
     Vector3 GetRandomPoint(Vector3 center, float radius)
