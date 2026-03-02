@@ -6,8 +6,16 @@ public class FindTarget : MonoBehaviour
     MoveAI moveAI;
     void Start()
     {
-        moveAI = GetComponent<MoveAI>();
-        moveAI.target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (CompareTag("Enemy"))
+        {
+            moveAI = GetComponent<MoveAI>();
+            moveAI.target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else if (CompareTag("Bullet"))
+        {
+            GetComponent<Respawn>().respawn = GameObject.Find("Respawn").transform;
+        }
+        
         
     }
 }

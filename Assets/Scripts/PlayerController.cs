@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     private Rigidbody rb;
     private Transform camTransform;
+
+    public Transform respawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -71,5 +73,10 @@ public class PlayerController : MonoBehaviour
         float jumpVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
         rb.AddForce(Vector3.up * jumpVelocity, ForceMode.VelocityChange);
         anim.SetTrigger("jump");
+    }
+
+    public void Teleport(Transform teleportPoint)
+    {
+        transform.position = teleportPoint.position;
     }
 }
